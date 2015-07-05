@@ -36,7 +36,7 @@ namespace TelerikWpfDemo1
         private void OnItem1Checked(object sender, NotifyCollectionChangedEventArgs e)
         {
             this.Item2Collection.Clear();
-            foreach (var odd in this.Item1Collection)
+            foreach (var odd in this.Item1Collection.CheckedItems)
             {
                 if (odd.Text.Equals("Odd"))
                 {
