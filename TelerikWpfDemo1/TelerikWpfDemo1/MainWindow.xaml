@@ -36,7 +36,7 @@
                                  Width="200" Height="40"
                                  ItemsSource="{Binding Item2Collection}"
                                  SelectionBoxTemplate="{StaticResource SelectionBoxTemplate}"
-                                 SelectedIndex="0"
+                                 SelectedIndex="{Binding SelectedIndex2, Mode=TwoWay}"
                                  ItemTemplate="{StaticResource CheckableItemTemplate}">
             </telerik:RadComboBox>
         </StackPanel>
