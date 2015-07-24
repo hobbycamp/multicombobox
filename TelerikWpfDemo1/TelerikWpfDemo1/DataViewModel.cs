@@ -10,6 +10,8 @@ namespace TelerikWpfDemo1
 {
     public class DataViewModel : ViewModelBase
     {
+        private int _selectedIndex2;
+
         public DataViewModel()
         {
             this.Item1Collection = new ComboBoxDataItemCollection(this.OnItem1Checked);
@@ -36,6 +38,7 @@ namespace TelerikWpfDemo1
         private void OnItem1Checked(object sender, NotifyCollectionChangedEventArgs e)
         {
             this.Item2Collection.Clear();
+            this.SelectedIndex2 = 0;
             foreach (var odd in this.Item1Collection.CheckedItems)
             {
                 if (odd.Text.Equals("Odd"))
@@ -65,6 +68,19 @@ namespace TelerikWpfDemo1
                 }
             }
             this.OnPropertyChanged("Item2Collection");
+        }
+
+        public int SelectedIndex2
+        {
+            get { return _selectedIndex2; }
+            set
+            {
+                if (this._selectedIndex2 != value)
+                {
+                    this._selectedIndex2 = value;
+                    this.OnPropertyChanged(() => this._selectedIndex2);
+                }
+            }
         }
 
 
